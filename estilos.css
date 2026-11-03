@@ -1,6 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
+font-family: Arial, sans-serif;
     color: #333333;
+    margin: 0;
 }
 
 header nav ul {
