@@ -1,65 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda</title>
+    <title>Tienda de Componentes de PC</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
+
+    <!-- Navegación con enlaces internos simulados -->
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Tienda</a></li>
-                <li><a href="productos.html">Productos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    
+    <!-- Menú lateral / Categorías -->
+    <aside id="contacto">
+        <h3>Categorías de Hardware</h3>
+        <ul>
+            <li><a href="#">Procesadores</a></li>
+            <li><a href="#">Tarjetas de Video</a></li>
+            <li><a href="#">Memoria RAM</a></li>
+            <li><a href="#">Almacenamiento SSD</a></li>
+        </ul>
+    </aside>
+
+    <!-- Contenido Principal unificado -->
     <main>
-    
-        <section>
-            <h2>Bienvenido a nuestra tienda virtual</h2>
-            <p>Encuentra los mejores productos, tecnología y accesorios con la mejor calidad y soporte del mercado.</p>
-            <p><a href="productos.html">Ir al catálogo de la tienda</a></p>
+        <section id="inicio">
+            <h1>Bienvenido a la Tienda de Componentes</h1>
+            <p>Encuentra el mejor hardware para armar tu equipo de alto rendimiento.</p>
         </section>
 
-        
-        <section>
-            <h3>Categorías Destacadas</h3>
-            <article>
-                <h4>Componentes de PC</h4>
-                <p>Procesadores, tarjetas gráficas y memorias RAM de alto rendimiento para tu equipo.</p>
-            </article>
-            <article>
-                <h4>Periféricos de Gama Alta</h4>
-                <p>Teclados mecánicos, ratones de precisión y diademas diseñadas para largas sesiones.</p>
-            </article>
-            <article>
-                <h4>Accesorios y Almacenamiento</h4>
-                <p>Unidades de estado sólido NVMe, discos externos y soportes ergonómicos.</p>
-            </article>
-        </section>
+        <section id="productos">
+            <h1>Catálogo de Componentes de PC</h1>
 
-        
-        <section>
-            <h3>¿Por qué elegirnos?</h3>
             <article>
-                <h4>Envíos seguros</h4>
-                <p>Llevamos tus compras de manera rápida y confiable hasta la puerta de tu hogar.</p>
+                <h2>Procesador AMD Ryzen 7 7800X3D</h2>
+                <p>El mejor procesador para gaming con arquitectura Zen 4 y tecnología 3D V-Cache de alto rendimiento.
+                </p>
+                <p><strong>Precio:</strong> $450 USD</p>
+                <a href="#" class="btn-comprar btn-especial">Comprar Ahora</a>
+                <!-- REFACTORIZACIÓN: Se reemplazó el id="btn-destacado" (que causaba conflicto de especificidad) por la clase "btn-especial" -->
             </article>
+
             <article>
-                <h4>Soporte técnico</h4>
-                <p>Atención personalizada para resolver todas tus dudas sobre especificaciones y compras.</p>
+                <h2>Tarjeta de Video NVIDIA RTX 4070 Ti</h2>
+                <p>Gráficos de última generación con soporte para Ray Tracing, DLSS 3 y excelente rendimiento en 1440p.
+                </p>
+                <p><strong>Precio:</strong> $799 USD</p>
+                <a href="#" class="btn-comprar">Comprar Ahora</a>
+            </article>
+
+            <article>
+                <h2>Memoria RAM Corsair Vengeance 32GB DDR5</h2>
+                <p>Kit de 2x16GB a 6000MHz optimizado para plataformas de última generación con baja latencia.</p>
+                <p><strong>Precio:</strong> $130 USD</p>
+                <a href="#" class="btn-comprar">Comprar Ahora</a>
+            </article>
+
+            <article>
+                <h2>Disco SSD NVMe Samsung 990 Pro 2TB</h2>
+                <p>Almacenamiento de alta velocidad PCIe 4.0 con lecturas de hasta 7450 MB/s para cargas ultrarrápidas.
+                </p>
+                <p><strong>Precio:</strong> $175 USD</p>
+                <a href="#" class="btn-comprar">Comprar Ahora</a>
             </article>
         </section>
     </main>
 
-    
+    <!-- Pie de página -->
     <footer>
         <p>&copy; 2026 Juanes Gualdrón. Maquetación semántica y arquitectura web protegidas bajo licencia de desarrollo
             independiente.</p>
