@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #5f5e5e;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+main section article {
+    color: #444444;
+}
+
+aside ul li {
+    color: #555555;
+}
+
+footer ul li a {
+    color: #777777;
+    text-decoration: none;
+}
+
+.btn-comprar {
+    background-color: #008cba;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#btn-destacado {
+    background-color: #d9534f;
+}
