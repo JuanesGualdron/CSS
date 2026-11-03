@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    color: #5f5e5e;
+    color: #333333;
 }
 
 header nav ul {
@@ -20,6 +20,11 @@ aside ul li {
     color: #555555;
 }
 
+aside ul li a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
 footer ul li a {
     color: #777777;
     text-decoration: none;
@@ -31,6 +36,7 @@ footer ul li a {
     text-decoration: none;
 }
 
-#btn-destacado {
+/* REFACTORIZACIÓN: Se elimina el selector de ID (#btn-destacado) previo que causaba conflicto de especificidad y se reemplaza por esta clase reutilizable */
+.btn-especial {
     background-color: #d9534f;
 }
