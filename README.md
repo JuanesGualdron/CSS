@@ -42,3 +42,15 @@ Catálogo web monolítico desarrollado con HTML5 y CSS3, aplicando el modelo de 
 
 3. **Prevención de colisiones visuales a medida que la hoja de estilos crece:** 
    Al centralizar la identidad visual en variables globales, se elimina la duplicación de códigos hexadecimales y medidas sueltas. Esto previene inconsistencias estéticas y asegura que cualquier componente nuevo que se agregue al catálogo herede automáticamente la misma escala, manteniendo la interfaz limpia, mantenible y predecible a largo plazo.
+
+   ## Hallazgos: Pseudoclases y Pseudoelementos
+
+1. **Diferencia funcional entre pseudoclases y pseudoelementos:**
+   - Una **pseudoclase** (como `:hover`, `:active` o `:focus`) reacciona de forma dinámica a los estados de interacción del usuario o del sistema sobre un elemento existente en el DOM.
+   - Un **pseudoelemento** (como `::before` o `::after`) permite generar e inyectar contenido decorativo o virtual directamente en el DOM renderizado sin necesidad de alterar la estructura estática del archivo HTML.
+
+2. **Importancia técnica de la pseudoclase `:focus` en accesibilidad:**
+   - El uso de `:focus` con contornos personalizados (`outline`) es una buena práctica crítica de accesibilidad web (A11y). Permite que los usuarios que navegan mediante dispositivos de asistencia o exclusivamente con la tecla `Tab` identifiquen de manera clara y visual en qué elemento o categoría están ubicados en todo momento.
+
+3. **Buenas prácticas al inyectar elementos decorativos desde CSS:**
+   - Inyectar etiquetas de oferta, iconos o viñetas decorativas mediante `::before` y `::after` evita "ensuciar" el marcado HTML con elementos vacíos o puramente estéticos. Esto mantiene el HTML limpio, semántico y enfocado únicamente en la estructura de la información, delegando toda la responsabilidad visual y ornamental a la hoja de estilos.
