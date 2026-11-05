@@ -24,15 +24,16 @@
         </nav>
     </header>
 
+    <div class="contenedor-layout">
     <!-- Menú lateral / Categorías -->
-    <aside id="contacto">
-        <h3>Categorías de Hardware</h3>
-        <ul>
-            <li><a href="#">Procesadores</a></li>
-            <li><a href="#">Tarjetas de Video</a></li>
-            <li><a href="#">Memoria RAM</a></li>
-            <li><a href="#">Almacenamiento SSD</a></li>
-        </ul>
+      <aside>
+          <h2>Categorías de Hardware</h2>
+          <ul>
+              <li><a href="#">Procesadores</a></li>
+              <li><a href="#">Tarjetas de Video</a></li>
+              <li><a href="#">Memoria RAM</a></li>
+              <li><a href="#">Almacenamiento SSD</a></li>
+          </ul>
     </aside>
 
     <!-- Contenido Principal unificado -->
@@ -52,6 +53,7 @@
                 <p><strong>Precio:</strong> $450 USD</p>
                 <a href="#" class="btn-comprar btn-especial">Comprar Ahora</a>
                 <!-- REFACTORIZACIÓN: Se reemplazó el id="btn-destacado" (que causaba conflicto de especificidad) por la clase "btn-especial" -->
+                <img src="./recursos/Procesador.jpg" alt="Procesador" class="img-producto">
             </article>
 
             <article>
@@ -60,6 +62,7 @@
                 </p>
                 <p><strong>Precio:</strong> $799 USD</p>
                 <a href="#" class="btn-comprar">Comprar Ahora</a>
+                <img src="./recursos/Tarjeta grafica.jpg" alt="Tarjeta Gráfica" class="img-producto">
             </article>
 
             <article>
@@ -67,6 +70,7 @@
                 <p>Kit de 2x16GB a 6000MHz optimizado para plataformas de última generación con baja latencia.</p>
                 <p><strong>Precio:</strong> $130 USD</p>
                 <a href="#" class="btn-comprar">Comprar Ahora</a>
+                <img src="./recursos/RAM.jpg" alt="Memoria RAM" class="img-producto">
             </article>
 
             <article>
@@ -75,9 +79,11 @@
                 </p>
                 <p><strong>Precio:</strong> $175 USD</p>
                 <a href="#" class="btn-comprar">Comprar Ahora</a>
+                <img src="./recursos/SSD.jpg" alt="Disco SSD" class="img-producto">
             </article>
         </section>
     </main>
+    </div>
 
     <!-- Pie de página -->
     <footer>
