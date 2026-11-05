@@ -1,11 +1,51 @@
-* {
-    box-sizing: border-box;
+:root {
+    /* Variables de Color (Paleta Corporativa) */
+    --color-primario: #008cba;
+    --color-secundario: #1e293b;
+    --color-fondo: #f4f6f8;
+    --color-texto: #444444;
+    --color-blanco: #ffffff;
+    --color-borde: #cbd5e1;
+    --color-enlace: #0066cc;
+    --color-secundario-texto: #94a3b8;
+
+    /* Variables de Tipografía */
+    --fuente-principal: 'Inter', Arial, sans-serif;
+
+    /* Variables de Espaciado (Box Model Tokens) */
+    --espaciado-pequeno: 8px;
+    --espaciado-medio: 16px;
+    --espaciado-grande: 24px;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    color: #333333;
+    font-family: var(--fuente-principal);
+    color: var(--color-texto);
     margin: 0;
+    background-color: var(--color-fondo);
+}
+
+/* 1. Supercajas principales */
+header {
+    background-color: var(--color-secundario);
+    padding: 50px var(--espaciado-grande);
+    color: var(--color-blanco);
+}
+
+main {
+    background-color: var(--color-fondo);
+    padding: var(--espaciado-medio);
+}
+
+aside {
+    background-color: #e2e8f0;
+    padding: 15px;
+}
+
+footer {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    padding: 25px var(--espaciado-grande);
 }
 
 header nav ul {
@@ -13,25 +53,27 @@ header nav ul {
     padding: 0;
     margin: 0;
 }
+
 header nav ul li {
     display: inline;
-    margin-right: 15px;
+    margin-right: var(--espaciado-medio);
 }
 
 header nav ul li a {
-    color: #ffffff; /* Blanco para contrastar sobre la imagen de fondo */
+    color: var(--color-blanco);
     text-decoration: none;
     font-weight: bold;
 }
 
+/* 2. Tarjetas de productos (<article>) unificadas */
 main section article {
-    color: #444444;
-    background-color: #ffffff;
+    color: var(--color-texto);
+    background-color: var(--color-blanco);
     padding: 20px; /* Aire de protección interno */
     margin: 15px 1%; /* Campo de fuerza exterior */
-    border: 1px solid #cbd5e1; /* Borde sutil para delimitar la caja */
+    border: 1px solid var(--color-borde); /* Borde sutil para delimitar la caja */
     display: inline-block;
-    width: 22%;
+    width: 19.5%;
     vertical-align: top;
     min-height: 320px;
 }
@@ -41,24 +83,30 @@ aside ul li {
 }
 
 aside ul li a {
-    color: #0066cc;
+    color: var(--color-enlace);
     text-decoration: none;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 footer ul li {
     display: inline;
-    margin-right: 15px;
+    margin-right: var(--espaciado-medio);
 }
 
 footer ul li a {
-    color: #94a3b8;
+    color: var(--color-secundario-texto);
     text-decoration: none;
 }
 
 .btn-comprar {
     display: inline-block;
-    background-color: #008cba;
-    color: #ffffff;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
     padding: 8px 15px;
     margin-top: 10px;
     text-decoration: none;
@@ -69,53 +117,4 @@ footer ul li a {
 /* REFACTORIZACIÓN: Se elimina el selector de ID (#btn-destacado) previo que causaba conflicto de especificidad y se reemplaza por esta clase reutilizable */
 .btn-especial {
     background-color: #d9534f;
-}
-
-/* 1. Supercajas principales: Colores de fondo e imagen del header */
-header {
-    background-color: #1e293b; /* Color de fondo sólido para el encabezado */
-    padding: 50px 20px;
-    color: #ffffff;
-}
-
-main {
-    background-color: #f4f6f8; /* Color de caja distinto para la sección principal */
-    padding: 20px;
-}
-
-aside {
-    background-color: #e2e8f0; /* Color de caja distinto para la barra lateral */
-    padding: 15px;
-}
-
-footer {
-    background-color: #1e293b; /* Color de caja distinto para el pie */
-    color: #ffffff;
-    padding: 25px 20px;
-}
-
-/* 2. Tarjetas de productos (<article>): Bordes, colores de texto y espacio */
-main section article {
-    background-color: #ffffff; /* Color de caja blanco para la tarjeta */
-    color: #444444; /* Color del texto dentro de la tarjeta */
-    padding: 20px; /* Aire interno (Padding) */
-    margin: 15px 0; /* Campo de fuerza exterior (Margin) */
-    border: 1px solid #cbd5e1; /* Borde visible alrededor de la caja */
-}
-
-/* 3. Enlaces del footer en línea */
-footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-footer ul li {
-    display: inline;
-    margin-right: 15px;
-}
-
-footer ul li a {
-    color: #94a3b8;
-    text-decoration: none;
 }
