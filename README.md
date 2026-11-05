@@ -29,3 +29,16 @@ Catálogo web monolítico desarrollado con HTML5 y CSS3, aplicando el modelo de 
    - El `margin` funciona como un "campo de fuerza exterior" que separa las cajas entre sí para evitar colisiones visuales.
 3. **Alineación con `inline-block`**: Al no permitirnos usar Flexbox ni Grid, el uso de `display: inline-block` combinado con `vertical-align: top` y anchos porcentuales (`width: 22%`) nos permitió alinear las 4 tarjetas de productos de forma horizontal en una sola fila.
 4. **Control de alturas**: El uso de `min-height` fue clave para solucionar la diferencia de longitudes provocada por las distintas cantidades de texto en cada tarjeta, logrando una apariencia visual limpia y uniforme.
+
+## Hallazgos: Centralización de Identidad Visual y Espaciado
+
+1. **Lista completa de variables declaradas:**
+   - **Colores:** `--color-primario` (#008cba), `--color-secundario` (#1e293b), `--color-fondo` (#f4f6f8), `--color-texto` (#444444), `--color-blanco` (#ffffff), `--color-borde` (#cbd5e1), `--color-enlace` (#0066cc) y `--color-secundario-texto` (#94a3b8).
+   - **Tipografía:** `--fuente-principal` ('Inter', Arial, sans-serif).
+   - **Espaciados (Box Model Tokens):** `--espaciado-pequeno` (8px), `--espaciado-medio` (16px) y `--espaciado-grande` (24px).
+
+2. **Ventaja de reutilizar medidas de margen y relleno:** 
+   Estandarizar los espaciados en tokens evita la dispersión de valores arbitrarios o "números mágicos" en el código. Esto permite mantener una proporción visual perfectamente armónica en el flujo de aire de las cajas y facilita modificaciones globales masivas con solo cambiar una línea central en la pseudoclase `:root`.
+
+3. **Prevención de colisiones visuales a medida que la hoja de estilos crece:** 
+   Al centralizar la identidad visual en variables globales, se elimina la duplicación de códigos hexadecimales y medidas sueltas. Esto previene inconsistencias estéticas y asegura que cualquier componente nuevo que se agregue al catálogo herede automáticamente la misma escala, manteniendo la interfaz limpia, mantenible y predecible a largo plazo.
