@@ -1,0 +1,44 @@
+.sidebar {
+    display: inline-block;
+    vertical-align: top;
+    width: 15%;
+    background-color: #dbeafe; /* Color azulito claro */
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 1000px;
+    border-radius: 6px;
+}
+
+.sidebar__title {
+    font-size: 1.1rem;
+    color: var(--color-secundario);
+    margin-top: 0;
+}
+
+.sidebar__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar__item {
+    margin-bottom: 8px;
+}
+
+.sidebar__link {
+    color: var(--color-enlace);
+    text-decoration: none;
+    display: block;
+    padding: 6px 8px;
+    border-radius: 4px;
+}
+
+.sidebar__link:hover {
+    background-color: var(--color-borde);
+    color: var(--color-secundario);
+}
+
+.sidebar__link:focus {
+    outline: 2px solid var(--color-secundario);
+    outline-offset: 2px;
+}
