@@ -54,3 +54,6 @@ Catálogo web monolítico desarrollado con HTML5 y CSS3, aplicando el modelo de 
 
 3. **Buenas prácticas al inyectar elementos decorativos desde CSS:**
    - Inyectar etiquetas de oferta, iconos o viñetas decorativas mediante `::before` y `::after` evita "ensuciar" el marcado HTML con elementos vacíos o puramente estéticos. Esto mantiene el HTML limpio, semántico y enfocado únicamente en la estructura de la información, delegando toda la responsabilidad visual y ornamental a la hoja de estilos.
+
+1. **Separación de responsabilidades y maquetación tradicional pura:**
+   - Se prioriza el uso de maquetación tradicional (bloques, flujos de caja y posicionamiento estándar) estructurando la hoja de estilos en componentes independientes y modulares (`menu-lateral.css`, `tarjeta.css`, `botones.css`). Estos componentes se enlazan de forma centralizada mediante `@import` justo debajo de las variables `:root` en la hoja maestra `estilos.css`, asegurando un mantenimiento limpio y ordenado sin depender de frameworks o modelos modernos de caja flexibles.
