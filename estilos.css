@@ -1,5 +1,10 @@
+/* 1. Las importaciones van PRIMERO */
+@import url('CSS/menu-lateral.css');
+@import url('CSS/tarjeta.css');
+@import url('CSS/botones.css');
+
+/* 2. Variables de diseño (:root) */
 :root {
-    /* Variables de Color (Paleta Corporativa) */
     --color-primario: #008cba;
     --color-secundario: #1e293b;
     --color-fondo: #f4f6f8;
@@ -8,11 +13,7 @@
     --color-borde: #cbd5e1;
     --color-enlace: #0066cc;
     --color-secundario-texto: #94a3b8;
-
-    /* Variables de Tipografía */
     --fuente-principal: 'Inter', Arial, sans-serif;
-
-    /* Variables de Espaciado (Box Model Tokens) */
     --espaciado-pequeno: 8px;
     --espaciado-medio: 16px;
     --espaciado-grande: 24px;
@@ -25,179 +26,66 @@ body {
     background-color: var(--color-fondo);
 }
 
-/* 1. Supercajas principales */
-header {
+.header {
     background-color: var(--color-secundario);
-    padding: 50px var(--espaciado-grande);
+    padding: 40px var(--espaciado-grande);
     color: var(--color-blanco);
     background-image: url('./recursos/Fondo.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
-main {
+.nav__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav__item {
+    display: inline;
+    margin-right: var(--espaciado-medio);
+}
+
+.nav__link {
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Contenedor general (Maquetación Tradicional sin flex) */
+.contenedor-layout {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main {
+    display: inline-block;
+    vertical-align: top;
+    width: 78%; /* Ocupa el resto al lado del sidebar */
     background-color: var(--color-fondo);
     padding: 20px;
-    width: 79%;
-    vertical-align: top;
     box-sizing: border-box;
 }
 
-aside {
-    background-color: #e2e8f0;
-    padding: 20px;
-    width: 15%;
-    vertical-align: top;
-    box-sizing: border-box;
-}
-
-footer {
+.footer {
     background-color: var(--color-secundario);
     color: var(--color-blanco);
     padding: 25px var(--espaciado-grande);
+    clear: both; /* Limpia los flotados o elementos en línea anteriores */
 }
 
-header nav ul {
+.footer__list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-header nav ul li {
+.footer__item {
     display: inline;
     margin-right: var(--espaciado-medio);
 }
 
-header nav ul li a {
-    color: var(--color-blanco);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-aside ul li a::before {
-    color: var(--color-secundario);
-    font-weight: bold;
-}
-
-/* Pseudoclase :hover para cambiar fondo y texto suavemente */
-aside ul li a:hover {
-    background-color: var(--color-borde);
-    color: var(--color-secundario);
-}
-
-/* Pseudoclase :focus para accesibilidad con teclado (Tab) usando variable secundaria */
-aside ul li a:focus {
-    outline: 2px solid var(--color-secundario);
-    outline-offset: 2px;
-}
-
-/* 2. Tarjetas de productos (<article>) unificadas */
-main section article {
-    color: var(--color-texto);
-    background-color: var(--color-blanco);
-    padding: 20px;
-    margin: 15px 1.5%;
-    border: 1px solid var(--color-borde);
-    display: inline-block;
-    width: 46%;               /* Ajustado para que quepan exactamente 2 tarjetas por fila */
-    vertical-align: top;
-    min-height: 320px;
-    position: relative;
-    border-radius: 6px;
-    box-sizing: border-box;
-    
-    /* Transición para el efecto de elevación y sombra */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-main section article::after {
-    content: "Nuevo";
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background-color: var(--color-primario);
-    color: var(--color-blanco);
-    font-size: 11px;
-    font-weight: bold;
-    padding: 3px 8px;
-    border-radius: 3px;
-    text-transform: uppercase;
-}
-
-main section article:hover {
-    transform: translateY(-5px); /* Eleva la tarjeta 5px hacia arriba */
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.04);
-}
-
-aside ul li {
-    color: #555555;
-}
-
-aside ul li a {
-    color: var(--color-enlace);
-    text-decoration: none;
-}
-
-footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-footer ul li {
-    display: inline;
-    margin-right: var(--espaciado-medio);
-}
-
-footer ul li a {
+.footer__link {
     color: var(--color-secundario-texto);
     text-decoration: none;
-}
-
-.btn-comprar {
-    display: inline-block;
-    background-color: var(--color-primario);
-    color: var(--color-blanco);
-    padding: 8px 15px;
-    margin-top: 10px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 14px;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-}
-
-.btn-comprar:hover {
-    background-color: #006699;
-}
-
-.btn-comprar:active {
-    transform: scale(0.96);
-}
-
-/* REFACTORIZACIÓN: Se elimina el selector de ID (#btn-destacado) previo que causaba conflicto de especificidad y se reemplaza por esta clase reutilizable */
-.btn-especial {
-    background-color: #d9534f;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-}
-
-.btn-especial:hover {
-    background-color: #990000;
-}
-
-.btn-especial:active {
-    transform: scale(0.96);
-}
-
-.img-producto {
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    width: 220px;          /* Ajusta el tamaño según lo necesites */
-    height: 170px;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-.contenedor-layout {
-    display: flex;
-    align-items: stretch; /* Fuerza a que ambos hijos midan exactamente lo mismo de alto */
 }
