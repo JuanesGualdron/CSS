@@ -62,9 +62,9 @@ body {
 }
 
 .main {
-    display: inline-block;
-    vertical-align: top;
-    width: 78%; /* Ocupa el resto al lado del sidebar */
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Ocupa todo el ancho restante al lado del sidebar */
     background-color: var(--color-fondo);
     padding: 20px;
     box-sizing: border-box;
