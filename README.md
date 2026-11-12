@@ -43,7 +43,7 @@ Catálogo web monolítico desarrollado con HTML5 y CSS3, aplicando el modelo de 
 3. **Prevención de colisiones visuales a medida que la hoja de estilos crece:** 
    Al centralizar la identidad visual en variables globales, se elimina la duplicación de códigos hexadecimales y medidas sueltas. Esto previene inconsistencias estéticas y asegura que cualquier componente nuevo que se agregue al catálogo herede automáticamente la misma escala, manteniendo la interfaz limpia, mantenible y predecible a largo plazo.
 
-   ## Hallazgos: Pseudoclases y Pseudoelementos
+## Hallazgos: Pseudoclases y Pseudoelementos
 
 1. **Diferencia funcional entre pseudoclases y pseudoelementos:**
    - Una **pseudoclase** (como `:hover`, `:active` o `:focus`) reacciona de forma dinámica a los estados de interacción del usuario o del sistema sobre un elemento existente en el DOM.
@@ -55,5 +55,11 @@ Catálogo web monolítico desarrollado con HTML5 y CSS3, aplicando el modelo de 
 3. **Buenas prácticas al inyectar elementos decorativos desde CSS:**
    - Inyectar etiquetas de oferta, iconos o viñetas decorativas mediante `::before` y `::after` evita "ensuciar" el marcado HTML con elementos vacíos o puramente estéticos. Esto mantiene el HTML limpio, semántico y enfocado únicamente en la estructura de la información, delegando toda la responsabilidad visual y ornamental a la hoja de estilos.
 
-1. **Separación de responsabilidades y maquetación tradicional pura:**
+4. **Separación de responsabilidades y maquetación tradicional pura:**
    - Se prioriza el uso de maquetación tradicional (bloques, flujos de caja y posicionamiento estándar) estructurando la hoja de estilos en componentes independientes y modulares (`menu-lateral.css`, `tarjeta.css`, `botones.css`). Estos componentes se enlazan de forma centralizada mediante `@import` justo debajo de las variables `:root` en la hoja maestra `estilos.css`, asegurando un mantenimiento limpio y ordenado sin depender de frameworks o modelos modernos de caja flexibles.
+
+## Hallazgos: Arquitectura Total con Flexbox
+
+1. **Control global del pie de página:** Aplicar `min-height: 100vh` y `flex-direction: column` al contenedor global (`body`) fue fundamental para obligar a la vista a ocupar siempre el 100% del alto de la pantalla. Esto permite que el contenedor central (`.contenedor-layout` con `flex: 1`) absorba el espacio disponible y empuje de manera natural y limpia el pie de página hacia el fondo, sin importar cuánto contenido tenga el catálogo.
+2. **Optimización con `gap` frente a márgenes tradicionales:** La propiedad `gap` reemplazó por completo el uso excesivo de márgenes laterales (`margin-right`) y trucos de comentarios HTML para eliminar espacios fantasma de `inline-block` en los menús de navegación, el panel lateral y la cuadrícula de productos. Al vincular `gap` directamente con las Custom Properties (`--espaciado-medio`, `--espaciado-grande`), el espaciado se volvió uniforme y centralizado.
+3. **Resistencia y elasticidad en las tarjetas de producto:** Combinar la metodología BEM, las Custom Properties y Flexbox permitió construir tarjetas simétricas y adaptables. Al aplicar `display: flex; flex-direction: column;` en `.card` y `flex-grow: 1` en `.card__description`, la descripción actúa como un resorte invisible que absorbe las diferencias de longitud en los textos, garantizando que el precio y el botón de compra (`.btn` con `align-self: flex-start`) queden siempre alineados milimétricamente en la zona inferior.
