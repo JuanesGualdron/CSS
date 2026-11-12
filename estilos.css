@@ -24,6 +24,9 @@ body {
     color: var(--color-texto);
     margin: 0;
     background-color: var(--color-fondo);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .header {
@@ -33,6 +36,9 @@ body {
     background-image: url('./recursos/Fondo.jpg');
     background-size: cover;
     background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav__list {
@@ -41,19 +47,16 @@ body {
     margin: 0;
 }
 
-.nav__item {
-    display: inline;
-    margin-right: var(--espaciado-medio);
-}
-
 .nav__link {
     color: var(--color-blanco);
     text-decoration: none;
     font-weight: bold;
 }
 
-/* Contenedor general (Maquetación Tradicional sin flex) */
+
 .contenedor-layout {
+    display: flex;
+    flex: 1; /* Hace que este contenedor crezca y empuje el footer al fondo */
     width: 100%;
     box-sizing: border-box;
 }
@@ -71,7 +74,9 @@ body {
     background-color: var(--color-secundario);
     color: var(--color-blanco);
     padding: 25px var(--espaciado-grande);
-    clear: both; /* Limpia los flotados o elementos en línea anteriores */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .footer__list {
@@ -80,12 +85,17 @@ body {
     margin: 0;
 }
 
-.footer__item {
-    display: inline;
-    margin-right: var(--espaciado-medio);
-}
 
 .footer__link {
     color: var(--color-secundario-texto);
     text-decoration: none;
+}
+
+.nav__list,
+.footer__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: var(--espaciado-medio);
 }
